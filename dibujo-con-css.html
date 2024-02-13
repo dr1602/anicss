@@ -74,6 +74,27 @@
             height: 3px;
             position: absolute;
             top: 9px;
+
+            animation-name: blink;
+            animation-duration: 2100ms;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes blink {
+            0% {
+                height: 3px;
+            }
+
+            6% {
+                height: 0.9px;
+                transform: translate(0px, 1.5px);
+            }
+
+            12% {
+                height: 3px;
+                transform: translate(0px, 0px);
+            }
         }
 
         .head__eye--left {
@@ -82,6 +103,104 @@
 
         .head__eye--right {
             right: 17.1px;
+        }
+
+        .cloud-right {
+            background: white;
+            width: 66px;
+            height: 51px;
+            border-top-left-radius: 33px;
+        }
+
+        .cloud-right::after, .cloud-right::before {
+            content: '';
+            position: relative;
+            display: inline-block;
+            background: inherit;
+            border-radius: inherit;
+        }
+
+        .cloud-right::after {
+            width: 33px;
+            height: 24px;
+            top: -27px;
+            left: 12px;
+        }
+
+        .cloud-right::after {
+            width: 45px;
+            height: 30px;
+            top: -20px;
+            left: 21px;
+        }
+
+        .cloud-left {
+            background: white;
+            width: 66px;
+            height: 51px;
+            border-top-right-radius: 33px;
+        }
+
+        .cloud-left::after, .cloud-left::before {
+            content: '';
+            position: relative;
+            display: inline-block;
+            background: inherit;
+            border-radius: inherit;
+        }
+
+        .cloud-left::after {
+            width: 33px;
+            height: 24px;
+            top: -27px;
+            left: 12px;
+        }
+
+        .cloud-left::after {
+            width: 45px;
+            height: 30px;
+            top: -20px;
+            left: 0px;
+        }
+
+        .tree {
+            background: rgb(134 239 172);
+            height: 51px;
+            width: 69px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .trunk{
+            background: #BC9E82;
+            height: 27px;
+            width: 30px;
+            position: relative;
+
+        }
+
+        .tree-left {
+            left: -30px;
+            bottom: 30px;
+            border-radius: 39%;
+        }
+
+        .tree-center {
+            left: 0px;
+            right: 15px;
+            bottom: 105px;
+            border-radius: 45%;
+        }
+
+        .tree-right {
+            left: 33px;
+            bottom: 136px;
+            border-radius: 45%;
+        }
+
+        .trunk-position {
+            bottom: 150px;
+            left: 21px;
         }
 
     </style>
@@ -109,15 +228,40 @@
             </div>
         </div>
         <div class='layer layer-3 z-13 left-0 right-0 bottom-0 mt-0 mx-auto w-[132px] h-[240px] bg-red-300'></div>
-        <div class='layer layer-4 z-14 h-[210px] w-12 bg-white bottom-0 left-[18px]'>
-            
+        <div class='layer layer-4 z-14 h-[210px] w-12 bg-none bottom-0 left-[18px]'>
+            <div class="left-ear--outer"></div>
+            <div class="left-ear--inner"></div>
+            <div class="right-ear--outer"></div>
+            <div class="right-ear--inner"></div>
+            <div class="head">
+                <div class="head__eye head__eye--left"></div>
+                <div class="head__eye head__eye--right"></div>
+            </div>
         </div>
         <div class='layer layer-5 z-15 left-0 right-0 bottom-0 mt-0 w-[132px] h-[162px] bg-red-300'></div>
-        <div class='layer layer-6 z-16 h-[120px] w-12 bg-white bottom-0 right-[18px]'></div>
+        <div class='layer layer-6 z-16 h-[138px] w-12 bg-none bottom-0 right-[18px]'>
+            <div class="left-ear--outer"></div>
+            <div class="left-ear--inner"></div>
+            <div class="right-ear--outer"></div>
+            <div class="right-ear--inner"></div>
+            <div class="head">
+                <div class="head__eye head__eye--left"></div>
+                <div class="head__eye head__eye--right"></div>
+            </div>
+        </div>
         <div class='layer layer-7 z-17 right-0 bottom-0 mt-0 w-[132px] h-[90px] bg-red-300'></div>
-        <div class='layer layer-8 z-18 left-0 bottom-0 mt-0 w-[66px] h-[51px] bg-white'></div>        
-        <div class='layer layer-10 z-18 right-0 bottom-0 mt-0 w-[66px] h-[51px] bg-white'></div>
-        <div class='layer layer-9 z-21 left-0 right-0 mx-auto bottom-0 mt-0 w-[72px] h-[30px] bg-green-300'></div>
+        <div class='layer layer-8 z-18 left-0 bottom-0 mt-0 w-[66px] h-[51px] bg-none'>
+            <div class="cloud-left"></div>
+        </div>        
+        <div class='layer layer-10 z-18 right-0 bottom-0 mt-0 w-[66px] h-[51px] bg-none'>
+            <div class="cloud-right"></div>
+        </div>
+        <div class='layer layer-9 z-21 left-0 right-0 mx-auto bottom-0 mt-0 w-[72px] h-[30px] bg-green-none'>
+            <div class="tree tree-left"></div>
+            <div class="tree tree-center"></div>
+            <div class="tree tree-right"></div>
+            <div class="trunk trunk-position"></div>
+        </div>
     </div>
 </body>
 </html>
