@@ -12,9 +12,141 @@
             width: 100%;
             display: grid;
             place-items: center;
+            counter-reset: game;
         }
+
+        input:checked {
+            counter-increment: game;
+        }
+
+        .total-count {
+            position: absolute;
+            bottom: -60px;
+            left: 34.5%;
+        }
+
+        .total-count::after {
+            content: counter(game);
+        }
+
         .layer {
             position: absolute;
+        }
+        
+        .layer-1 {
+            animation: updown;
+            animation-duration: 3000ms;
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes updown {
+            25% {
+                bottom: 0;
+            }
+            50% {
+                bottom: -81px;
+            }
+            72% {
+                bottom: -9px;
+            }
+            81% {
+                bottom: -45px;
+            }
+        }
+
+        .layer-1 input[type=checkbox] {
+        }
+
+        .layer-2 {
+            animation: updowntwo;
+            animation-duration: 3300ms;
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes updowntwo {
+            21% {
+                bottom: 9px;
+            }
+            30% {
+                bottom: -30px;
+            }
+            51% {
+                bottom: -81px;
+            }
+            81% {
+                bottom: -12px;
+            }
+        }
+
+        .layer-2 input[type=checkbox] {
+        }
+
+        .layer-4 {
+            animation: updownfour;
+            animation-duration: 900ms;
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes updownfour {
+            25% {
+                bottom: -0px;
+            }
+            50% {
+                bottom: -120px;
+            }
+            84% {
+                bottom: -0px;
+            }
+        }
+
+        .layer-4 input[type=checkbox] {
+        }
+
+        .layer-6 {
+            animation: updownsix;
+            animation-duration: 1500ms;
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes updownsix {
+            25% {
+                bottom: 0px;
+            }
+            50% {
+                bottom: 33px;
+            }
+            84% {
+                bottom: -48px;
+            }
+        }
+
+        .layer-6 input[type=checkbox] {
+        }
+
+        .layer-7 {
+            animation: updownseven;
+            animation-duration: 1500ms;
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes updownseven {
+            25% {
+                bottom: 0px;
+            }
+            50% {
+                bottom: 15px;
+            }
+            75% {
+                bottom: 0px;
+            }
+        }
+
+        .layer-7 input[type=checkbox] {
         }
 
         .left-ear--outer {
@@ -76,7 +208,7 @@
             top: 9px;
 
             animation-name: blink;
-            animation-duration: 2100ms;
+            animation-duration: 1500ms;
             animation-iteration-count: infinite;
 
         }
@@ -208,6 +340,7 @@
 <body>
     <div class='phone relative border-solid border-8 border-black rounded-3xl h-96 w-48 bg-[#CCEFFF] shadow-2xl shadow-[0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22)]'>
         <div class='layer layer-1 z-11 h-72 w-12 bg-none bottom-0 right-[30px]'>
+            <input type="checkbox">
             <div class="left-ear--outer"></div>
             <div class="left-ear--inner"></div>
             <div class="right-ear--outer"></div>
@@ -218,6 +351,7 @@
             </div>
         </div>
         <div class='layer layer-2 z-12 h-72 w-12 bg-none bottom-0 left-[30px]'>
+            <input type="checkbox">
             <div class="left-ear--outer"></div>
             <div class="left-ear--inner"></div>
             <div class="right-ear--outer"></div>
@@ -229,6 +363,7 @@
         </div>
         <div class='layer layer-3 z-13 left-0 right-0 bottom-0 mt-0 mx-auto w-[132px] h-[240px] bg-red-300'></div>
         <div class='layer layer-4 z-14 h-[210px] w-12 bg-none bottom-0 left-[18px]'>
+            <input type="checkbox">
             <div class="left-ear--outer"></div>
             <div class="left-ear--inner"></div>
             <div class="right-ear--outer"></div>
@@ -240,6 +375,7 @@
         </div>
         <div class='layer layer-5 z-15 left-0 right-0 bottom-0 mt-0 w-[132px] h-[162px] bg-red-300'></div>
         <div class='layer layer-6 z-16 h-[138px] w-12 bg-none bottom-0 right-[18px]'>
+            <input type="checkbox">
             <div class="left-ear--outer"></div>
             <div class="left-ear--inner"></div>
             <div class="right-ear--outer"></div>
@@ -262,6 +398,8 @@
             <div class="tree tree-right"></div>
             <div class="trunk trunk-position"></div>
         </div>
+
+        <h3 class='total-count'> Score: </h3>
     </div>
 </body>
 </html>
