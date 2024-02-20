@@ -55,7 +55,22 @@
             }
         }
 
-        .layer-1 input[type=checkbox] {
+        .layer-1 input[type=checkbox], .layer-2 input[type=checkbox],
+        .layer-4 input[type=checkbox], .layer-6 input[type=checkbox]
+         {
+            appearance: none;
+            height: 37px;
+            width: 48px;
+            margin: 0;
+            position: relative;
+            top: 0;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        input[type=checkbox]:focus {
+            appearance: none;
+            outline: none;
         }
 
         .layer-2 {
@@ -80,9 +95,6 @@
             }
         }
 
-        .layer-2 input[type=checkbox] {
-        }
-
         .layer-4 {
             animation: updownfour;
             animation-duration: 900ms;
@@ -102,14 +114,12 @@
             }
         }
 
-        .layer-4 input[type=checkbox] {
-        }
-
         .layer-6 {
             animation: updownsix;
             animation-duration: 1500ms;
             animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
             animation-iteration-count: infinite;
+            animation: alternate 6s running running reverse;
         }
 
         @keyframes updownsix {
@@ -124,14 +134,12 @@
             }
         }
 
-        .layer-6 input[type=checkbox] {
-        }
-
         .layer-7 {
             animation: updownseven;
             animation-duration: 1500ms;
             animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
             animation-iteration-count: infinite;
+            animation: alternate 6s running running reverse;
         }
 
         @keyframes updownseven {
@@ -144,9 +152,6 @@
             75% {
                 bottom: 0px;
             }
-        }
-
-        .layer-7 input[type=checkbox] {
         }
 
         .left-ear--outer {
